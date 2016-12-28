@@ -1,38 +1,39 @@
 
 <template>
-	<div id="login">
-		<input v-model="userName" />
-		<input v-model="userPwd" />
+	<div id ="login">
+		<img id="close" src="../assets/ic_acc.png" />
+		<img id="avatar" src="../assets/ic_acc.png" />
+		{{userName}}
+		<div class="inputblock">
+			<img src="../assets/ic_acc.png">
+			<input v-model="userName" />
+		</div>
+
+		<div class="inputblock">
+			<img src="../assets/ic_pwd.png">
+			<input v-model="userPwd" />
+		</div>
+	
 	</div>
-
-
 </template>
 
 
 <script>
-	var vue = new Vue({
-		el:"#login",
-		data:{
-			userName:"",
-			userPwd:""
-		},
-		created:function(){
-			console.log("view is created!")
-		},
-		mounted:function(){
-			console.log("view is mounted!")
-		},
-		updated:function(){
-			console.log("view is updated!")
-		},
-		destoryed:function(){
-			console.log("view is destoryed!")
-		}
-
-	});
-
+	export default {
+	  name: '#login',
+	  data: () => {
+	    return {
+	      userName: '',
+	      userPwd: ''
+	    }
+	  }
+	}
 </script>
 
-<style>
-	
+<style scoped>
+	#login{
+		padding: 10;
+		background-color: '#454233'
+	}
+
 </style>
