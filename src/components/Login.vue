@@ -76,9 +76,14 @@
 	      this.pressed = !this.pressed
 	      console.log('userName = ' + this.userName + '  pwd = ' + this.userPwd + '  pressed = ' + this.pressed)
 	      // this.$emit('show-dialog', 'hello')
-	      // this.$store.dispatch('showdialog')
-	      this.$store.commit('showdialog')
+	      this.$store.dispatch('increment')
+	      this.$store.dispatch('testPromise').then(() => {
+	      // dosomething
+	        this.$store.commit('showdialog', this.counter ++)
+	      })
+	      this.$store.commit('showdialog', this.counter ++)
 	      console.log('commit = ' + this.$store.state.stateA)
+	      console.log('route path = ' + this.$router.push('home'))
 	      // this.$el.parentNode.innerHTML = dialog.$el
 	      // console.log('parentNode = ' + this.$el.parentNode.parentNode.innerHTML)
 	    },
@@ -111,10 +116,23 @@
 		padding: 10;
 		background-color: '#454233';
 		align-items: stretch;
+		justify-content: center;
 		width: 100%;
 		height: 100%;
 	}
-
+	/*@media screen and (max-width:960px) {
+		#login{
+			width: 100%;
+			height: 100%;
+		}
+	}
+	@media screen and (min-width:960px) {
+		#login{
+			justify-content: center;
+			width: 80%;
+			height: 100%;
+	}
+	}*/
 	#headclose{
 		display: flex;
 		justify-content: flex-start;

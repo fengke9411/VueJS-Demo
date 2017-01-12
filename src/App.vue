@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <login message='hello' icon='#457123'></login>
-    <custdialog v-show="showdialog"></custdialog>
+    <custdialog v-show="false"></custdialog>
+    {{stateA}}{{count}}
+    <router-link to='login'>路由</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -9,6 +12,8 @@
 import Hello from './components/Hello'
 import Login from './components/Login'
 import custdialog from './components/Dialog'
+// import {routerView, routerLink} from 'vue-router'
+// import mapState from 'vuex'
 export default {
   name: 'app',
   // store: store,
@@ -21,11 +26,24 @@ export default {
     Hello,
     Login,
     custdialog
+    // routerView,
+    // routerLink
   },
   computed: {
-    showdialog () {
-      return this.$store.state.showdialog
+    localComputed () {},
+    testGetters () {
+      return this.$store.getters.testGetters
+    },
+    stateA () {
+      return this.$store.state.stateA
+    },
+    count () {
+      return this.$store.state.count
     }
+    // ...mapState({
+    //   showdialog: 'showdialog'
+    //   // ...
+    // })
   },
   methods: {
     'show-dialog': function (msg) {
