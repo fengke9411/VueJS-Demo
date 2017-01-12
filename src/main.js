@@ -8,28 +8,30 @@ import router from './router/router'
 /* eslint-disable no-new */
 // router.start(App, '#app')
 // Vue.use(VueRouter)
-new Vue({
-  store,
-  router,
-  render: h => h(App)
-}).$mount('#app')
-// router.push('/login')
-// router.start(App, '#app')
 // new Vue({
 //   store,
 //   router,
-//   el: '#app',
-//   template: '<App/>',
-//   components: {
-//     App
-//   },
-//   created: () => {
-//     console.log('main created...')
-//   },
-//   mounted: () => {
-//     console.log('main mounted...')
-//   },
-//   updated: () => {
-//     console.log('main updated...')
-//   }
-// })
+//   render: h => h(App)
+// }).$mount('#app')
+// router.push('/login')
+// router.start(App, '#app')
+new Vue({
+  store,
+  router,
+  el: '#app',
+  template: '<router-view></router-view>',
+  components: {
+    App
+  },
+  created: () => {
+    console.log('main created...')
+  },
+  mounted: () => {
+    console.log('main mounted...')
+    // router.push('/test')
+  },
+  updated: () => {
+    console.log('main updated...')
+  }
+})
+// router.push('/test')

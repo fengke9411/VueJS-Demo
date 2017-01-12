@@ -3,7 +3,7 @@
     <login message='hello' icon='#457123'></login>
     <custdialog v-show="false"></custdialog>
     {{stateA}}{{count}}
-    <router-link to='login'>路由</router-link>
+    <router-link to="login">路由</router-link>
     <router-view></router-view>
   </div>
 </template>

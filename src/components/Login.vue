@@ -6,7 +6,7 @@
 		<img class="input_lefticon" src="../assets/ic_close.png">
 	</div>
 
-	<div>
+	<div style="text-align:center">
 		<img id="avatar" src="../assets/iv_defaultavatar.png">
 	</div>
 
@@ -83,7 +83,7 @@
 	      })
 	      this.$store.commit('showdialog', this.counter ++)
 	      console.log('commit = ' + this.$store.state.stateA)
-	      console.log('route path = ' + this.$router.push('home'))
+	      console.log('route path = ' + this.$router.app)
 	      // this.$el.parentNode.innerHTML = dialog.$el
 	      // console.log('parentNode = ' + this.$el.parentNode.parentNode.innerHTML)
 	    },
