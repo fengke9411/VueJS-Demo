@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <login message='hello' icon='#457123'></login>
-    <custdialog v-show="false"></custdialog>
-    {{stateA}}{{count}}
-    <router-link to="login">路由</router-link>
     <router-view></router-view>
   </div>
 </template>
@@ -40,32 +36,36 @@ export default {
     count () {
       return this.$store.state.count
     }
-    // ...mapState({
-    //   showdialog: 'showdialog'
-    //   // ...
-    // })
+
   },
   methods: {
-    'show-dialog': function (msg) {
-      console.log('events' + msg)
-      // this.showdialog = true
-    }
   }
 }
 </script>
 
 <style>
 #app {
-  position: float;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin: auto;
+  margin: 0 auto;
   font-size: 16px;
   padding: 0 0 0 0;
   height: 100%;
-
+  background-color: #efefef;
 }
+  @media screen and (max-width:960px) {
+    #app{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @media screen and (min-width:960px) {
+    #app{
+      width: 60%;
+      height: 100%;
+  }
+  }
 </style>

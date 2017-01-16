@@ -16,7 +16,6 @@
 			</div>
 			<input class="input" placeholder="请输入账号" v-model="userName" />
 			<div class="imgwarp">
-
 			</div>
 		</div>
 		<hr/>
@@ -30,8 +29,11 @@
 			</div>
 		</div>
 		<hr/>
-	
-			<input id="button" type="button" name="login" value="登  录" v-on:click="btnClick" />
+		<input id="button" type="button" name="login" value="登  录" v-on:click="btnClick" />
+		<div id="empty"></div>
+		<div id="bottom">
+			<router-link :to="{name:'register',params:{mobile:'1122222'}}">快速注册</router-link> | <router-link to="test">忘记密码</router-link>
+		</div>
 	</div>
 </template>
 
@@ -84,8 +86,7 @@
 	      this.$store.commit('showdialog', this.counter ++)
 	      console.log('commit = ' + this.$store.state.stateA)
 	      console.log('route path = ' + this.$router.app)
-	      // this.$el.parentNode.innerHTML = dialog.$el
-	      // console.log('parentNode = ' + this.$el.parentNode.parentNode.innerHTML)
+	      console.log('route path = ' + this.$route.params.hello)
 	    },
 	    switchBtnClick: function () {
 	      // 通过模块化的方式引用图片路径，这样引用的图片就可以成功打包进bundle文件夹里了
@@ -99,9 +100,6 @@
 	        this.switchsrc = require('../assets/ic_show.png')
 	      }
 	      console.log('userName = ' + this.userName + '  pwd = ' + this.userPwd + '  pressed = ' + this.pressed)
-	      // this.$el.ownerDocument.getElementById('switchBtn').src = switchsrc
-	      // this.$el.ownerDocument.getElementById('switchBtn').src = require('../assets/ic_hidden.png')
-	      // console.log(this.$el.ownerDocument.getElementById('switchBtn'))
 	      console.log('parentNode = ' + this.el)
 	    }
 	  }
@@ -114,13 +112,14 @@
 		display: flex;
 		flex-direction: column;
 		padding: 10;
-		background-color: '#454233';
+		background-color: #454233;
 		align-items: stretch;
-		justify-content: center;
+		justify-content: flex-start;
 		width: 100%;
 		height: 100%;
+		margin: 0 auto;
 	}
-	/*@media screen and (max-width:960px) {
+/*	@media screen and (max-width:960px) {
 		#login{
 			width: 100%;
 			height: 100%;
@@ -129,7 +128,7 @@
 	@media screen and (min-width:960px) {
 		#login{
 			justify-content: center;
-			width: 80%;
+			width: 60%;
 			height: 100%;
 	}
 	}*/
@@ -201,5 +200,16 @@
 		border-left-style: none;
 		color: #666666;
 		margin: 0.5em 0.5em 0.5em 0.5em;
+	}
+	#empty{
+		flex: 2;
+	}
+	#bottom{
+		/*position: relative;*/
+		text-align: center;
+		padding-bottom: 1.5em;
+		bottom: 1.5em;
+		color: #999999;
+		width: 100%;
 	}
 </style>
